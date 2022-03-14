@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/files.svg">
+    <title>List book</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            List Book
+        </h1>
+    </header>
+
+    <div class="wrap">
+        <div class="container">
+            <h2 class="container-header center">Tambahkan koleksi buku anda</h2>
+            <form class="form" action="#" id="form">
+                <div class="form-group form-title">
+                    <label for="title">Masukan title :</label>
+                    <input type="text" placeholder="nama title" id="title" name="title" required>
+                </div>
+                <div class="form-group form-title">
+                    <label for="author">Masukan author :</label>
+                    <input type="text" placeholder="nama author" id="author" name="author" required>
+                </div>
+                <div class="form-group form-title">
+                    <label for="date">Masukkan year :</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <label for="check">
+                <input type="checkbox" name="check" id="check" >
+               sudah selesai baca</label>
+
+                <input type="submit" value="Submit" name="Submit" class="btn-submit">
+            </form>
+        </div>
+
+            <!-- <div class="container">
+                <h2 class="container-header text-center">cari buku yang anda punya</h2>
+                    <div class="form-group form-title">
+                        <label for="book">Masukan nama buku :</label>
+                        <input type="text" placeholder="masukan judul buku " id="book" name="book" required>
+                    </div>
+                    <input type="submit" value="search" name="search" class="search">
+                </form>
+            </div> -->
+            
+        <div class="container">
+            <h2 class="container-header center">Belum selesai di baca</h2>
+            <div class="list-item" id="todos">
+                
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="container-header center">sudah selesai di baca</h2>
+            <div class="list-item" id="completed-todos">
+                
+            </div>
+        </div>
+    </div>
+    <script src="./js/data.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

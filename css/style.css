@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: "Gudea", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #EA5C54 0%, #bb6dec 100%);
+    box-sizing: border-box;
+}
+
+header {
+    padding: 15px;
+    color: white;
+}
+
+h1{
+    padding-left: 4px ;
+    padding-right: 3px;
+    width: 87px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrap .container {
+    width: 1024px;
+    border-radius: 8px;
+    margin: 15px;
+    background: rgb(255, 255, 255, 0.1 );
+    padding: 16px;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+
+.item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: rgba(22, 22, 22, 0.2)white;
+    display: flex;
+    align-items: center;
+}
+
+.item > .inner h2 {
+    margin-bottom: unset;
+}
+
+.item > .inner p {
+    margin-top: 5px;
+}
+
+
+.form {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    height: 450px;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+    font-size: 18;
+    font-weight: lighter;
+}
+
+.shade {
+    box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+}
+
+input[type=text],
+input[type=date] {
+    background: rgb(245, 241, 255, 0.2);
+    border: 1px solid #000  ;
+    border-radius: 10px;
+    padding: 17px;
+    box-sizing: border-box;
+    margin-bottom: -10px;
+    font-size: 25px;
+}
+
+label[for=check]{
+    margin-top: 20px;
+}
+
+.btn-submit {
+    width: fit-content;
+    border: none;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 12px 24px;
+    background:#35394a;
+    border:2px solid #000;
+    color: #fff;
+    font-size: 24px;
+    margin-top: auto;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.btn-submit:hover{
+    color: white;
+    background: #DC6180;
+    cursor: pointer;
+    transition-property: background, color;
+    transition-duration: 0.2s;
+}
+::placeholder{
+    color: #fff;
+}
+/* .search {
+    border: none;
+    font-weight: bold;
+    font-family: Raleway;
+    border-radius: 30px;
+    padding: 12px 24px;
+    background:#000;
+    border:2px solid #000;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.search:hover{
+    background: #df5025;
+    color: white;
+} */
+
+input[type=text],
+input[type=date],
+.btn-submit:focus{
+    outline: none;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.form-title {
+    margin: auto 0;
+}
+
+.btn-check {
+    background: url('../assets/upload.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-check:hover {
+    background: url('../assets/download.svg');
+    background-size: contain;
+}
+
+.btn-trash{
+    background: url('../assets/paper-shredder.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-trash:hover {
+    background: url('../assets/bin.svg');
+    background-size: contain;
+}
+
+.btn-undo{
+    background: url('../assets/download.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-undo:hover {
+    background: url('../assets/upload.svg');
+    background-size: contain;
+}
+
+.btn-check:focus, .btn-trash {
+    outline: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .wrap {
+        margin: 0;
+    }
+
+    .wrap .container {
+        width: 100%;
+    }
+
+    .list-item {
+        width: 90%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+}
