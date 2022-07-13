@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     submitForm.addEventListener("submit", function (event) {
         event.preventDefault();
         cekBook();
+        clear();
     });
 
     if(isStorageExist()){
         loadDataFromStorage();
     }
 });
-
 document.addEventListener("ondatasaved", () => {
     console.log("Data berhasil di simpan.");
 });

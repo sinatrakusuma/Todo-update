@@ -24,12 +24,14 @@ function makeTodo(data, nameAuthor,timestamp, isCompleted) {
     if (isCompleted) {
         container.append(
             createUndoButton(),
-            createTrashButton()
+            createTrashButton(),
+            createEditButton()
         );
     } else {
         container.append(
             createCheckButton(),
-            createTrashButton()
+            createTrashButton(),
+            createEditButton()
         );
     }
 
@@ -53,6 +55,11 @@ function createCheckButton() {
         addTaskToCompleted(event.target.parentElement);
     });
 }
+function createEditButton() {
+    return createButton("btn-edit", function (event) {
+        editTodo(event.target.parentElement);
+    });
+}
 
 function createButton(buttonTypeClass, eventListener) {
     const button = document.createElement("button");
@@ -67,7 +74,6 @@ function createButton(buttonTypeClass, eventListener) {
 function addTodo() {
     const uncompletedTODOList = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
 
-    // const noId = document.getElementById("nomoid").value;
     const textTodo = document.getElementById("title").value;
     const textAuthor = document.getElementById("author").value;
     const timestamp = document.getElementById("date").value;
@@ -84,7 +90,6 @@ function addTodo() {
 function addTodoComplete() {
     const listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
 
-    // const noId = document.getElementById("nomoid").value;
     const textTodo = document.getElementById("title").value;
     const textAuthor = document.getElementById("author").value;
     const timestamp = document.getElementById("date").value;
@@ -103,7 +108,6 @@ function addTodoComplete() {
 function addComplete() {
     const listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
 
-    // const noId = document.getElementById("nomoid").value;
     const textTodo = document.getElementById("title").value;
     const textAuthor = document.getElementById("author").value;
     const timestamp = document.getElementById("date").value;
@@ -116,7 +120,6 @@ function addComplete() {
     todos.push(todoObject);
 
     listCompleted.append(todo);
-    
     updateDataToStorage();
 }
 
@@ -147,6 +150,35 @@ function removeTaskFromCompleted(taskElement /* HTMLELement */) {
     const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
     todos.splice(todoPosition, 1);
 
+    taskElement.remove();
+    updateDataToStorage();
+}
+
+function editTodo(taskElement /* HTMLELement */) {
+
+    const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
+    
+    console.log(todos[`${todoPosition}`])
+    document.getElementById("title").value = todos[`${todoPosition}`].task;
+    document.getElementById("author").value = todos[`${todoPosition}`].authorname;
+    document.getElementById("date").value = todos[`${todoPosition}`].timestamp;
+    document.getElementById("check").checked = todos[`${todoPosition}`].isCompleted;
+    todos.splice(todoPosition, 1);
+    taskElement.remove();
+    updateDataToStorage();
+}
+
+function searchTodo(taskElement /* HTMLELement */) {
+    position = document.getElementById("book").value;
+
+    console.log(position)
+    
+    console.log(todos[`${todoPosition}`])
+    document.getElementById("title").value = todos[`${todoPosition}`].task;
+    document.getElementById("author").value = todos[`${todoPosition}`].authorname;
+    document.getElementById("date").value = todos[`${todoPosition}`].timestamp;
+    document.getElementById("check").checked = todos[`${todoPosition}`].isCompleted;
+    todos.splice(todoPosition, 1);
     taskElement.remove();
     updateDataToStorage();
 }
@@ -185,6 +217,14 @@ function refreshDataFromTodos() {
     }
 }
 
+function cekEdit(){
+    const cekedit = document.getElementsByClassName("btn-edit").click;
+
+    if (cekEdit == true){
+        console.log("saya di click")
+    }
+}
+
 function cekBook(){
     const cekbok =document.getElementById("check");
 
@@ -194,4 +234,11 @@ function cekBook(){
         addTodo();
         updateDataToStorage();
     }
+}
+
+function clear(){
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("date").value = "";
+    document.getElementById("check").value = "";
 }

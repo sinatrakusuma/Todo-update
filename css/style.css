@@ -1,12 +1,13 @@
+/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
+/* reset default format */
 * {
     box-sizing: border-box;
     color: #fff;
     text-transform: capitalize;
     font-family: "Gudea", sans-serif;
 }
-
+/* set background and sizing */
 html,
 body {
     margin: 0;
@@ -14,26 +15,24 @@ body {
     background: linear-gradient(135deg, #EA5C54 0%, #bb6dec 100%);
     box-sizing: border-box;
 }
-
 header {
-    padding: 15px;
-    color: white;
+    padding: 25px;
+    color: #000;
 }
-
+/* style h1 */
 h1{
-    padding-left: 4px ;
-    padding-right: 3px;
-    width: 87px;
+    padding: 10px;
+    width: 100px;
     border-radius: 10px;
     border: 1px solid #fff;
 }
-
+/* use flexbox */
 .wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+/* style wrap and containere */
 .wrap .container {
     width: 1024px;
     border-radius: 8px;
@@ -43,8 +42,7 @@ h1{
     flex-grow: 1;
     height: fit-content;
 }
-
-
+/* style item */
 .item {
     border-radius: 16px;
     margin-top: 16px;
@@ -53,16 +51,13 @@ h1{
     display: flex;
     align-items: center;
 }
-
 .item > .inner h2 {
     margin-bottom: unset;
 }
-
 .item > .inner p {
     margin-top: 5px;
 }
-
-
+/* use flexbox for form section */
 .form {
     display: flex;
     padding: 16px;
@@ -70,22 +65,23 @@ h1{
     height: 450px;
     border-radius: 16px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
 }
-
 .form-group label {
     margin-bottom: 4px;
     font-size: 18;
     font-weight: lighter;
 }
-
+.form-title {
+    margin: auto 0;
+}
+/* set shadow */
 .shade {
     box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
 }
-
+/* style input */
 input[type=text],
 input[type=date] {
     background: rgb(245, 241, 255, 0.2);
@@ -93,31 +89,33 @@ input[type=date] {
     border-radius: 10px;
     padding: 17px;
     box-sizing: border-box;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
     font-size: 25px;
 }
-
+/* give margin */
 label[for=check]{
     margin-top: 20px;
 }
-
+/* style button submit */
 .btn-submit {
     width: fit-content;
-    border: none;
     font-weight: bold;
     border-radius: 30px;
     padding: 12px 24px;
-    background:#35394a;
-    border:2px solid #000;
-    color: #fff;
+    background:#32364a;
+    color: #EA5C54;
     font-size: 24px;
-    margin-top: auto;
     align-self: flex-end;
     cursor: pointer;
 }
-
+input[type=text],
+input[type=date],
+.btn-submit:focus{
+    outline: none;
+}
+/* effect submit button when hover */
 .btn-submit:hover{
-    color: white;
+    color: #fff;
     background: #DC6180;
     cursor: pointer;
     transition-property: background, color;
@@ -126,40 +124,10 @@ label[for=check]{
 ::placeholder{
     color: #fff;
 }
-/* .search {
-    border: none;
-    font-weight: bold;
-    font-family: Raleway;
-    border-radius: 30px;
-    padding: 12px 24px;
-    background:#000;
-    border:2px solid #000;
-    color: #fff;
-    font-size: 24px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.search:hover{
-    background: #df5025;
-    color: white;
-} */
-
-input[type=text],
-input[type=date],
-.btn-submit:focus{
-    outline: none;
-}
-
-
 .center {
     text-align: center;
 }
-
-.form-title {
-    margin: auto 0;
-}
-
+/* style button */
 .btn-check {
     background: url('../assets/upload.svg');
     background-size: contain;
@@ -172,6 +140,20 @@ input[type=date],
 
 .btn-check:hover {
     background: url('../assets/download.svg');
+    background-size: contain;
+}
+.btn-edit {
+    background: url('../assets/note.png');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-edit:hover {
+    background: url('../assets/document.png');
     background-size: contain;
 }
 
@@ -208,8 +190,7 @@ input[type=date],
 .btn-check:focus, .btn-trash {
     outline: none;
 }
-
-
+/* responsive screen */
 @media only screen and (max-width: 1024px) {
     .wrap {
         margin: 0;

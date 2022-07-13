@@ -1,18 +1,18 @@
+/* import font */
 @import url(https://fonts.googleapis.com/css?family=Gudea:400,700);
-
+/* reset default format */
 *{
  margin: 0;
  padding: 0;
  font-family: "Gudea", sans-serif;
  font-weight: bold;
 }
-
+/* set size */
 html{
     width: 100vw;
     height: 100vh;
 }
-
-/* CSS which you need for blurred box */
+/* create card */
 body{
  background-repeat: no-repeat;
  background-attachment: fixed;
@@ -26,7 +26,7 @@ body{
   font-weight: 400;
  -webkit-font-smoothing: antialiased; 
 }
-
+/* create blur effect */
 .blurred-box{
   position: relative;
   width: 250px;
@@ -37,7 +37,7 @@ body{
   border-radius: 2px;
   overflow: hidden;
 }
-
+/* add after blurred box */
 .blurred-box:after{
  content: '';
  width: 400px;
@@ -53,20 +53,19 @@ body{
  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
  filter: blur(10px);
 }
-
-
-/* Form which you dont need */
+/* create login box */
 .user-login-box{
   position: relative;
   margin-top: 50px;
   text-align: center;
   z-index: 1;
 }
+/* set size login box */
 .user-login-box > *{
   display: inline-block;
   width: 200px;
 }
-
+/* add icon */
 .user-icon{
   width: 100px;
   height: 100px;
@@ -77,13 +76,13 @@ body{
   background-size: cover;
   background-position: -100px -35px;
 }
-
+/* set layout user name */
 .user-name{
   margin-top: 15px;
   margin-bottom: 15px;
   color: white;
 }
-
+/* style inout password */
 input.user-password{
   margin-top: 15px;
   width: 120px;
@@ -103,6 +102,7 @@ input.user-submit{
   border: 0;
   color: #EA5C54;
 }
+/* style hover when submitted */
 input.user-submit:hover{
   color: #fff;
   color: white;
